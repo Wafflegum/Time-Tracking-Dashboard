@@ -8,36 +8,166 @@ $mobile: 375px
 $desktop: 1280px
 
 .attribution
-    font-size: 11px
+    font-size: 1.8vh
     text-align: center
 .attribution a
      color: hsl(228, 45%, 44%)
 
+html
+    width: 100%
+    height: 100%
+
 body
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
     font-family: "Rubik", sans-serif
+    font-weight: 300
     color: white
     background: hsl(226, 43%, 10%)
 
 main
     @media screen and (min-width: $mobile)
-        
+        display: grid
+        width: 85%
+        grid-template-rows: repeat(7, 1fr)
+
     
     @media screen and (min-width: $desktop)
+        width: 75%
+        min-height: 60%
         display: grid
-    
+        align-items: center
+        justify-items: center
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+        gap: 1.5em
+
+#profile-menu
+    @media screen and (min-width: $desktop)
+        grid-row: span 2
+        height: 100%
+        width: 100%
+        border-radius: 2vh
+        background: hsl(235, 46%, 20%)
+        box-sizing: border-box
+
+        display: grid
+        grid-template-rows: repeat(3, 1fr)
+
+        #profile
+            height: 100%
+            border-radius: 2vh
+            background: hsl(246, 80%, 60%)
+            box-sizing: border-box
+            padding: 4vh
+            grid-row: span 2
+
+        #dp 
+            width: 100%
+
+            margin-bottom: 3em
+            img
+                width: 10vh
+                border-radius: 100%
+                outline: .25em solid white
+        #message
+            font-weight: 300
+            font-size: 1.8vh
+            opacity: 0.6
+        #name
+            font-weight: 300
+            font-size: 4vh
+        
+        #menu
+            display: flex
+            flex-direction: column
+            justify-content: center
+            // grid-template-rows: repeat(3, 2em)
+            gap: 1.25em
+
+            box-sizing: border-box
+            padding: 1em 1.8em 1em 1.8em
+
+            font-weight: 300
+            font-size: 2vh
+
+            .timeframe
+                box-sizing: border-box
+            #daily, #monthly
+                color: hsl(235, 45%, 61%)
+
 .card
-    width: 10em
-    height: 10em
+    width: 100%
+    height: 100%
+    border-radius: 2vh
+
     background: hsl(235, 46%, 20%)
-    margin: 50px
 
     display: flex
     flex-direction: column
 
-    align-items: center
+    &__cover
+        max-height: 25%
+        border-radius: 2vh 2vh 0 0
+        background: hsl(15, 100%, 70%)
+        display: flex
+        align-items: center
+        overflow: hidden
 
-    &__title
+        img
+            margin-left: auto
+            padding-right: 2vh
+            text-align: right
+
+            object-fit: contain
+    #work-cover
+        background: hsl(15, 100%, 70%)
+    #play-cover
+        background: hsl(195, 74%, 62%)
+    #study-cover
+        background: hsl(348, 100%, 68%)
+    #exercise-cover
+        background: hsl(145, 58%, 55%)
+    #social-cover
+        background: hsl(264, 64%, 52%)
+    #selfcare-cover
+        background: hsl(43, 84%, 65%)
+    
+    &__content
+        border-radius: 2vh
+        margin-top: -1em
+        padding: 1.8em
+        background: hsl(235, 46%, 20%)
+
+    &__header
         width: 100%
+        border-radius: 5px
+
+        display: flex
+        flex-direction: row
+        align-items: center
 
         box-sizing: border-box
-        padding: 10px
+
+        &__title
+            flex: 1 1 80%
+            width: fit-content
+            font-size: 2vh
+            font-weight: 500
+        img
+            height: 5px
+    .current-stat
+        margin: 20px 0 10px 0
+        font-size: 7vh
+    .prev-stat
+        font-size: 1.8vh
+        color: hsl(236, 100%, 87%)
+        

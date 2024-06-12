@@ -1,0 +1,43 @@
+.rubik-font
+  font-family: "Rubik", sans-serif
+  font-optical-sizing: auto
+  font-weight: 300
+  font-style: normal
+
+$mobile: 375px
+$desktop: 1280px
+
+.attribution
+    font-size: 11px
+    text-align: center
+.attribution a
+     color: hsl(228, 45%, 44%)
+
+body
+    font-family: "Rubik", sans-serif
+    color: white
+    background: hsl(226, 43%, 10%)
+
+main
+    @media screen and (min-width: $mobile)
+        
+    
+    @media screen and (min-width: $desktop)
+        display: grid
+    
+.card
+    width: 10em
+    height: 10em
+    background: hsl(235, 46%, 20%)
+    margin: 50px
+
+    display: flex
+    flex-direction: column
+
+    align-items: center
+
+    &__title
+        width: 100%
+
+        box-sizing: border-box
+        padding: 10px

@@ -16,7 +16,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 ## Overview
 
-A basic timetracking website.
+A responsive timetracking website using CSS grid and CSS flex. This is just a front-end project from [FrontEnd Mentor](https://frontendmentor.io/) to hone my web dev skills.
 
 ### The challenge
 
@@ -26,7 +26,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
-### Screenshot
+### Screenshots
 
 ![Desktop version](./preview/Desktop%20version.png)
 ![Mobile version](./preview/Mobile%20version.png)
@@ -51,4 +51,4 @@ I've learned for of and Object.entries, which I think will help me in the future
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Wafflegum)
+- Frontend Mentor - [@wafflegum](https://www.frontendmentor.io/profile/Wafflegum)

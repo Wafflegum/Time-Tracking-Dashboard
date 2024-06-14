@@ -8,8 +8,13 @@
 .attribution {
   font-size: 1.8vh;
   text-align: center;
+  padding: 2vh;
 }
-
+@media only screen and (min-width: 360px) and (max-width: 1279px) {
+  .attribution {
+    font-size: 1.5vh;
+  }
+}
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
@@ -33,45 +38,120 @@ body {
   color: white;
   background: hsl(226, 43%, 10%);
 }
+@media only screen and (min-width: 360px) and (max-width: 1279px) {
+  body {
+    justify-content: normal;
+  }
+}
 
-@media screen and (min-width: 375px) {
+@media only screen and (min-width: 360px) and (max-width: 1279px) {
   main {
     display: grid;
     width: 85%;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center;
+    padding-top: 4vh;
+    padding-bottom: 0vh;
+    gap: 3vh;
+    border-box: box-sizing;
   }
 }
-@media screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   main {
     width: 75%;
     min-height: 60%;
+    margin: 0;
     display: grid;
     align-items: center;
     justify-items: center;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1.5em;
+    gap: 2vh;
   }
 }
 
-@media screen and (min-width: 1280px) {
+#profile-menu {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+  border-radius: 2vh;
+  display: grid;
+  background: hsl(235, 46%, 20%);
+}
+#profile-menu .timeframe {
+  box-sizing: border-box;
+  transition: color 0.3s ease;
+  color: hsl(235, 45%, 61%);
+}
+#profile-menu .timeframe:hover {
+  cursor: pointer;
+  color: white;
+}
+@media only screen and (min-width: 360px) and (max-width: 1279px) {
   #profile-menu {
-    grid-row: span 2;
-    height: 100%;
-    width: 100%;
-    border-radius: 2vh;
-    background: hsl(235, 46%, 20%);
-    box-sizing: border-box;
     display: grid;
+  }
+  #profile-menu #profile {
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background: hsl(246, 80%, 60%);
+    box-sizing: border-box;
+    padding: 4vh;
+    border-radius: 2vh;
+  }
+  #profile-menu #dp {
+    flex: 0 1 10%;
+  }
+  #profile-menu #dp img {
+    width: 7vh;
+    border-radius: 100%;
+    outline: 0.3vh solid white;
+  }
+  #profile-menu span {
+    flex: 1 1 0%;
+  }
+  #profile-menu #message {
+    color: hsl(236, 100%, 87%);
+    font-size: 1.5vh;
+    font-weight: 300;
+  }
+  #profile-menu #name {
+    font-size: 2.5vh;
+  }
+  #profile-menu #menu {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    min-height: 6vh;
+    min-width: 0;
+    padding: 0.5vh 4vh 0.5vh 4vh;
+    text-align: left;
+    font-weight: 400;
+    font-size: 2vh;
+    gap: 20%;
+  }
+  #profile-menu #menu .timeframe {
+    max-width: 6ch;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #profile-menu {
+    box-sizing: border-box;
     grid-template-rows: repeat(3, 1fr);
+    border-radius: 2vh;
   }
   #profile-menu #profile {
     height: 100%;
-    border-radius: 2vh;
     background: hsl(246, 80%, 60%);
     box-sizing: border-box;
     padding: 4vh;
     grid-row: span 2;
+    display: block;
+    border-radius: 2vh;
   }
   #profile-menu #dp {
     width: 100%;
@@ -85,7 +165,7 @@ body {
   #profile-menu #message {
     font-weight: 300;
     font-size: 1.8vh;
-    opacity: 0.6;
+    color: hsl(236, 100%, 87%);
   }
   #profile-menu #name {
     font-weight: 300;
@@ -95,27 +175,29 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: normal;
     gap: 1.25em;
     box-sizing: border-box;
     padding: 1em 1.8em 1em 1.8em;
     font-weight: 300;
     font-size: 2vh;
   }
-  #profile-menu #menu .timeframe {
-    box-sizing: border-box;
-  }
-  #profile-menu #menu #daily, #profile-menu #menu #monthly {
-    color: hsl(235, 45%, 61%);
+  #profile-menu .timeframe {
+    text-align: left;
   }
 }
 
 .card {
+  background: hsl(235, 46%, 20%);
+  font-size: 2vh;
   width: 100%;
   height: 100%;
+}
+.card__content {
   border-radius: 2vh;
+  margin-top: -1em;
+  padding: 3vh 3vh 0vh 3vh;
   background: hsl(235, 46%, 20%);
-  display: flex;
-  flex-direction: column;
 }
 .card__cover {
   max-height: 25%;
@@ -127,6 +209,8 @@ body {
 }
 .card__cover img {
   margin-left: auto;
+  width: 10vh;
+  height: 10vh;
   padding-right: 2vh;
   text-align: right;
   object-fit: contain;
@@ -149,36 +233,78 @@ body {
 .card #selfcare-cover {
   background: hsl(43, 84%, 65%);
 }
-.card__content {
-  border-radius: 2vh;
-  margin-top: -1em;
-  padding: 1.8em;
-  background: hsl(235, 46%, 20%);
+@media only screen and (min-width: 360px) and (max-width: 1279px) {
+  .card {
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .card__cover {
+    max-height: 35%;
+  }
+  .card__header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .card__header__title {
+    flex: 1 1 80%;
+    font-weight: 400;
+  }
+  .card__header img {
+    height: 5px;
+    padding-right: 0;
+  }
+  .card__stats {
+    display: flex;
+    align-items: center;
+  }
+  .card__stats .current-stat {
+    flex: 1 1 50%;
+    font-size: 3.5vh;
+  }
+  .card__stats .prev-stat {
+    font-size: 1.8vh;
+    color: hsl(236, 100%, 87%);
+  }
 }
-.card__header {
-  width: 100%;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  box-sizing: border-box;
-}
-.card__header__title {
-  flex: 1 1 80%;
-  width: fit-content;
-  font-size: 2vh;
-  font-weight: 500;
-}
-.card__header img {
-  height: 5px;
-}
-.card .current-stat {
-  margin: 20px 0 10px 0;
-  font-size: 7vh;
-}
-.card .prev-stat {
-  font-size: 1.8vh;
-  color: hsl(236, 100%, 87%);
+@media only screen and (min-width: 1280px) {
+  .card {
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .card__header {
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .card__header__title {
+    flex: 1 1 80%;
+    width: fit-content;
+    font-size: 2vh;
+    font-weight: 500;
+  }
+  .card__header img {
+    height: 5px;
+  }
+  .card__stats {
+    display: block;
+  }
+  .card__stats .current-stat {
+    margin: 20px 0 10px 0;
+    width: 6ch;
+    font-size: 7vh;
+  }
+  .card__stats .prev-stat {
+    font-size: 1.8vh;
+    color: hsl(236, 100%, 87%);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -47,8 +47,17 @@ function assignStats(timeframe) {
     if(infoData !== null || infoData.Length !== 0) {
         for (const [title, element] of Object.entries(elements)) { //* sets the element values of each cards in the screen by using one by one based on the timeframe inputted
             let activityData = infoData.find(data => data.title === title)
-            element.current.textContent = `${activityData.timeframes[timeframe].current}hrs`
-            element.previous.textContent = `Last week - ${activityData.timeframes[timeframe].previous}hrs`
+
+            const displayHour = (n) => {
+                if (n <= 1){
+                   return `${n}hr`
+                } else {
+                    return `${n}hrs`
+                }
+            }
+            element.current.textContent = displayHour(activityData.timeframes[timeframe].current)
+            
+            element.previous.textContent = `Last week - ${displayHour(activityData.timeframes[timeframe].previous)}`
         }
     }
 }
